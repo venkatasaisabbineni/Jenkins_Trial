@@ -1,5 +1,4 @@
 jenkins-env/
-*.conf
 .DS_Store
 drivers/
 __pycache__
