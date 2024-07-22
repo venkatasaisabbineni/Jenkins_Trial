@@ -41,6 +41,7 @@ pipeline {
                         def s3_bucket = 'jenkinstrialf1data' // Define your S3 bucket name.
                         sh """
                             . venv/bin/activate
+                            pip install awscli
                             aws s3 cp ${output_path} s3://${s3_bucket} --recursive
                         """
                     }
