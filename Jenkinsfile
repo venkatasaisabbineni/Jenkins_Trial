@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                     . venv/bin/activate
-                    spark-submit etl/drivers.py
+                    spark-submit --packages org.scala-lang:scala-library:2.12.15 etl/drivers.py
                     ''' // Running the Spark job on the agent.
             }
         }
