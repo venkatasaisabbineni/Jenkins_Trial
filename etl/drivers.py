@@ -4,6 +4,12 @@ import requests
 import s3fs
 from utils.constants import DRIVERS,OUTPUT_PATH#,AWS_ACCESS_KEY_ID,AWS_ACCESS_KEY,AWS_BUCKET_NAME
 
+import os
+import sys
+os.environ['SPARK_HOME'] = "/Users/venkatasaisabbineni/Work/Spark"
+os.environ['PYSPARK_PYTHON'] = 'python'
+os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
+
 spark = SparkSession.builder \
     .appName("F1_Drivers to S3") \
     .getOrCreate()
@@ -25,7 +31,7 @@ df = df.withColumn("session_key", col("session_key").cast("int"))
 df.dropDuplicates()
 type_of_method = DRIVERS.split('/')[-1]
 file_path = f'{OUTPUT_PATH}/{type_of_method}'
-df.write.format("csv").mode("overwrite").option("header",True).partitionBy("meeting_key","session_key").save(file_path)
+df.write.mode("overwrite").option("header",True).partitionBy("meeting_key","session_key").csv(file_path)
 #load
 # try:
 #     s3 = s3 = s3fs.S3FileSystem(anon=False,
