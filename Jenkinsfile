@@ -4,8 +4,8 @@ pipeline {
     environment {
         // AWS_ACCESS_KEY_ID = credentials('aws_access_key_id') // Accessing stored AWS credentials.
         // AWS_SECRET_ACCESS_KEY = credentials('aws_secret_access_key')
-        SPARK_HOME=/Users/venkatasaisabbineni/Work/Spark
-        PATH=$PATH:$SPARK_HOME/bin
+        SPARK_HOME="/Users/venkatasaisabbineni/Work/Spark"
+        PATH="$PATH:$SPARK_HOME/bin"
         // PYTHONPATH=$PYTHONPATH:/Users/venkatasaisabbineni/Work/Jenkins_Trial
     }
 
