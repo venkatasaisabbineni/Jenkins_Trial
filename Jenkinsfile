@@ -12,9 +12,13 @@ pipeline {
         //         git 'https://github.com/venkatasaisabbineni/Jenkins_Trial.git' // Cloning the repository to the agent's workspace.
         //     }
         // }
-        stage('Install Dependencies') {
+        stage('Setup Python Environment') {
             steps {
-                sh 'pip install -r requirements.txt' // Installing dependencies in the agent's environment.
+                sh '''
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install -r requirements.txt
+                '''
             }
         }
         stage('Run Spark Job') {
