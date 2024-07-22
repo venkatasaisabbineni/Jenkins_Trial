@@ -7,11 +7,11 @@ pipeline {
     // }
 
     stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/venkatasaisabbineni/Jenkins_Trial.git' // Cloning the repository to the agent's workspace.
-            }
-        }
+        // stage('Clone Repository') {
+        //     steps {
+        //         git 'https://github.com/venkatasaisabbineni/Jenkins_Trial.git' // Cloning the repository to the agent's workspace.
+        //     }
+        // }
         stage('Install Dependencies') {
             steps {
                 sh 'pip install -r requirements.txt' // Installing dependencies in the agent's environment.
