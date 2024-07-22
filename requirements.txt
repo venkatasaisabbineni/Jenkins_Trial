@@ -1,4 +1,4 @@
-pyspark==3.4.3
-requests==2.26.0
-s3fs==2023.1.0
-configparser==5.3.0
+pyspark
+requests
+s3fs
+configparser
