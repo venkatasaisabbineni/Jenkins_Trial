@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 import requests
 import s3fs
-from utils.constants import DRIVERS,OUTPUT_PATH#,AWS_ACCESS_KEY_ID,AWS_ACCESS_KEY,AWS_BUCKET_NAME
+from utils.constants import DRIVERS,OUTPUT_PATH,AWS_ACCESS_KEY_ID,AWS_ACCESS_KEY,AWS_BUCKET_NAME
 
 spark = SparkSession.builder \
     .appName("F1_Drivers to S3") \
@@ -25,7 +25,7 @@ df = df.withColumn("session_key", col("session_key").cast("int"))
 df.dropDuplicates()
 type_of_method = DRIVERS.split('/')[-1]
 file_path = f'{OUTPUT_PATH}/{type_of_method}'
-df.write.option("header",True).partitionBy("meeting_key","session_key").csv(file_path)
+# df.write.option("header",True).partitionBy("meeting_key","session_key").csv(file_path)
 #load
 # try:
 #     s3 = s3 = s3fs.S3FileSystem(anon=False,

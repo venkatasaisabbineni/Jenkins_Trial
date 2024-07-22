@@ -2,4 +2,4 @@ jenkins-env/
 .DS_Store
 drivers/
 __pycache__
-config/config copy.conf
+config/config_copy.conf
