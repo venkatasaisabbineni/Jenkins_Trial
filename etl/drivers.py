@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 import requests
 import s3fs
-from utils.constants import DRIVERS,AWS_ACCESS_KEY_ID,AWS_ACCESS_KEY,AWS_BUCKET_NAME,OUTPUT_PATH
+from utils.constants import DRIVERS,OUTPUT_PATH#,AWS_ACCESS_KEY_ID,AWS_ACCESS_KEY,AWS_BUCKET_NAME
 
 spark = SparkSession.builder \
     .appName("F1_Drivers to S3") \
