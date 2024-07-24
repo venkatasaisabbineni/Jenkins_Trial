@@ -28,7 +28,7 @@ pipeline {
                     . venv/bin/activate
                     spark-submit etl/drivers.py
                     spark-submit etl/meetings.py
-                    spark-submit etl/session.py
+                    spark-submit etl/sessions.py
                     ''' // Running the Spark job on the agent.
             }
         }
