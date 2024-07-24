@@ -15,3 +15,5 @@ OUTPUT_PATH = parser.get('data','output_path')
 
 #API
 DRIVERS = parser.get('api_methods', 'drivers')
+MEETINGS = parser.get('api_methods','meetings')
+SESSIONS = parser.get('api_methods','sessions')
