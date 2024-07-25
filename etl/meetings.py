@@ -21,7 +21,7 @@ else:
     print(f"Error {response.status_code}: {response.reason}")
     data = []
 df = spark.createDataFrame(data)
-df.printSchema()
+# df.printSchema()
 #transformations
 type_of_method = MEETINGS.split('/')[-1]
 file_path = f'{OUTPUT_PATH}/{type_of_method}'

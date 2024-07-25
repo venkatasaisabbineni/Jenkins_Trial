@@ -22,7 +22,7 @@ else:
     print(f"Error {response.status_code}: {response.reason}")
     data = []
 df = spark.createDataFrame(data)
-df.printSchema()
+# df.printSchema()
 #transformations
 df = df.drop("headshot_url","team_colour")
 df = df.withColumn("driver_number", col("driver_number").cast("int"))

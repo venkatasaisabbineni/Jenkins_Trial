@@ -23,7 +23,7 @@ else:
     print(f"Error {response.status_code}: {response.reason}")
     data = []
 df = spark.createDataFrame(data)
-df.printSchema()
+# df.printSchema()
 #transformations
 df = df.withColumn("date",to_timestamp("date"))
 windowSpecLatest = Window.partitionBy("meeting_key", "session_key", "position").orderBy(col("date").desc())
