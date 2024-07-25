@@ -29,6 +29,7 @@ pipeline {
                     spark-submit etl/drivers.py
                     spark-submit etl/meetings.py
                     spark-submit etl/sessions.py
+                    spark-submit etl/positions.py
                     ''' // Running the Spark job on the agent.
             }
         }

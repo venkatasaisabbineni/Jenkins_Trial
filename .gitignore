@@ -3,3 +3,4 @@ jenkins-env/
 data/
 __pycache__
 config/config_copy.conf
+etl/testing.ipynb

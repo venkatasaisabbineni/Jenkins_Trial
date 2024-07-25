@@ -10,7 +10,7 @@ os.environ['PYSPARK_PYTHON'] = 'python'
 os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
 
 spark = SparkSession.builder \
-    .appName("Meetings to S3") \
+    .appName("Sessions to S3") \
     .getOrCreate()
 print("Process Started")
 #extract
